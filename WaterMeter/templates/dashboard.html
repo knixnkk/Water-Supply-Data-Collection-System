@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Water Meter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">
+        
+        <script src="https://kit.fontawesome.com/5a3701df67.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="logo" href="/">Water Supply Data Collection System</a>
+            <ul>
+                <li><a class="active" href="/">Index</a></li>
+                <li><a href="/contact">Contact us</a></li>
+                <li><a href="/table">Table</a></li>
+            </ul>
+        </nav>
+        <br><br>
+        <div class="box-container">
+
+            <div class="box box2">
+                <div class="text">
+                    <h2 class="topic-heading">{{Unit}}</h2>
+                    <h2 class="topic">Unit</h2>
+                </div>
+
+                <i class="fa-solid fa-droplet"style="color: #7ca7fe; font-size: 60px;"></i>
+            </div>
+
+            <div class="box box3">
+                <div class="text">
+                    <h2 class="topic-heading">{{Price}}</h2>
+                    <h2 class="topic">Baht</h2>
+                </div>
+
+                <i class="fa-sharp fa-solid fa-coins"style="color: #ffce47; font-size: 60px;"></i>
+            </div>
+        </div>
+        <br>
+        <br><br><br>
+        <div class="Address">
+            <p>{{name}}</p>
+            <br>
+            <p>{{addr}}</p>
+            <p>Last Update : {{time}}</p>
+        </div>
+        <script src="{{ url_for('static', filename='scrollwheellock.js') }}"></script>
+        <script type="text/javascript">
+            var slider = document.querySelector('.img-slider');
+            var checkbox = document.getElementById('check');
+            
+            checkbox.addEventListener('click', function() {
+                if (checkbox.checked) {
+                slider.style.display = 'none';
+                } else {
+                slider.style.display = 'block';
+                }
+            });
+            
+
+        </script>
+    </body>
+</html>

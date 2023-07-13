@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Water Meter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='table.css') }}">
+        
+        <script src="https://kit.fontawesome.com/5a3701df67.js" crossorigin="anonymous"></script>
+        <style>
+            .center {
+              margin: 0 auto;
+            }
+          </style>
+    </head>
+    <body>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="logo" href="/">Water Supply Data Collection System</a>
+            <ul>
+                <li><a class="active" href="/">Index</a></li>
+                <li><a href="/contact">Contact us</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+        <div class="center">
+            <br><br>
+            <div class="Month">
+                <p>Month : {{month}}</p>
+            </div>
+            <table class="content-table">
+                <thead>
+                <tr>
+                    <th>House No.</th>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Price (No TAX)</th>
+                    <th>TAX</th>
+                    <th>TOTAL</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for row in input_data %}
+                        <tr class="active_row">
+                            {% for cell in row %}
+                            <td>
+                                {{cell}}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </script>
+    </body>
+</html>

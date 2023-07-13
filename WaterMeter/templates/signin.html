@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Water Meter</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signin.css') }}">
+        
+        <script src="https://kit.fontawesome.com/5a3701df67.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <a class="logo" href="/">Water Supply Data Collection System</a>
+            <ul>
+                <li><a class="active" href="/">Index</a></li>
+                <li><a href="/contact">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <form action="/signin" method="POST" class="form">
+                <h2>SIGN IN</h2>
+                <input type="text" name="username" class="box" placeholder="Enter Username">
+                <input type="password" name="password" class="box" placeholder="Enter Password">
+                <input type="submit" value= "SIGN IN" id="submit">
+            </form>
+            <div class="side">
+                <img src="{{ url_for('static', filename='LogoSystemWater-01.jpg') }}">
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='scrollwheellock.js') }}"></script>
+    </body>
+</html>
